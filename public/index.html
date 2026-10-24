@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="sq">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kalendari i Vjeljes</title>
+<meta name="description" content="Kur vilen frutat, perimet dhe frutat e egra në Prishtinë dhe në Opojë/Dragash.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#f3f5ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111511" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Vjelja">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preload" href="fonts/alegreya-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Fonts, stored with the app so they work offline */
+@font-face{font-family:"Alegreya";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/alegreya-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/alegreya-latin-ext-500-normal.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Alegreya";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/alegreya-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/alegreya-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Alegreya Sans";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/alegreya-sans-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya Sans";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/alegreya-sans-latin-ext-400-normal.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Alegreya Sans";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/alegreya-sans-latin-400-italic.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya Sans";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/alegreya-sans-latin-ext-400-italic.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Alegreya Sans";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/alegreya-sans-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya Sans";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/alegreya-sans-latin-ext-500-normal.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Alegreya Sans";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/alegreya-sans-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Alegreya Sans";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/alegreya-sans-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+/* Layout: almanac page — header, "sot" panel, climate pair, then a 12-month harvest chart with two lanes per crop (Prishtinë above, Opojë below) */
+:root{
+  --bg:#f3f5ef; --surface:#ffffff; --fg:#1a2118; --muted:#5b6658; --line:#e0e5da; --line-strong:#c8cfbf;
+  --pr:#b03a55; --pr-soft:#f5e1e6; --op:#2a6985; --op-soft:#dceaf0; --mark:#c98300; --accent:#2e5b39;
+  --font-display:"Alegreya", Georgia, "Times New Roman", serif;
+  --font-body:"Alegreya Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --name-col:minmax(7.25rem, 14rem);
+  --nowx:0%;
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111511; --surface:#182018; --fg:#e3e9de; --muted:#9aa695; --line:#263025; --line-strong:#3a4638;
+    --pr:#e46c84; --pr-soft:#3b2027; --op:#62b2cf; --op-soft:#163039; --mark:#f0b545; --accent:#8fc99c;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111511; --surface:#182018; --fg:#e3e9de; --muted:#9aa695; --line:#263025; --line-strong:#3a4638;
+  --pr:#e46c84; --pr-soft:#3b2027; --op:#62b2cf; --op-soft:#163039; --mark:#f0b545; --accent:#8fc99c;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{background:var(--bg); -webkit-text-size-adjust:100%}
+body{margin:0; background:var(--bg); color:var(--fg); font-family:var(--font-body); font-size:16px; line-height:1.5}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--bg)}
+.wrap{max-width:68rem; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px)); padding-block:1.5rem 3rem}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+
+/* app bar */
+.appbar{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:.5rem 1rem; margin-bottom:1.25rem; min-height:2rem}
+.status{display:inline-flex; align-items:center; gap:.45rem; margin:0; font-size:.8125rem; color:var(--muted)}
+.status::before{content:""; width:.5rem; height:.5rem; border-radius:50%; background:var(--accent)}
+.status.off::before{background:var(--mark)}
+.install{font:inherit; font-size:.875rem; font-weight:500; padding:.35rem .8rem; border-radius:999px; border:1px solid var(--accent); background:transparent; color:var(--accent); cursor:pointer}
+.ioshint{flex-basis:100%; margin:0; font-size:.8125rem; color:var(--muted)}
+
+/* header */
+.eyebrow{margin:0; font-size:.8125rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); font-weight:700}
+h1{font-family:var(--font-display); font-weight:700; font-size:clamp(2.1rem, 5vw, 3.1rem); line-height:1.05; margin:.3rem 0 .75rem; text-wrap:balance}
+.lead{max-width:62ch; color:var(--muted); font-size:1.0625rem; margin:0}
+
+/* now panel */
+.now{margin-top:2rem; display:grid; gap:1rem}
+.now-head{display:flex; flex-wrap:wrap; align-items:end; justify-content:space-between; gap:.75rem 1.5rem}
+.now-head h2{font-family:var(--font-display); font-size:1.6rem; line-height:1.15; margin:0; text-wrap:balance}
+.datebox{display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; font-size:.9375rem}
+.datebox label{color:var(--muted)}
+.datebox input, .search input{font:inherit; font-size:1rem; padding:.35rem .6rem; border:1px solid var(--line-strong); border-radius:8px; background:var(--surface); color:var(--fg)}
+.btn-link{font:inherit; font-size:.9375rem; border:0; background:none; color:var(--accent); text-decoration:underline; cursor:pointer; padding:.2rem}
+.now-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap:1rem}
+.card{background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:1rem 1.1rem 1.1rem; min-width:0}
+.card h3{display:flex; align-items:center; gap:.5rem; margin:0; font-size:1.125rem}
+.sw{display:inline-block; width:.75rem; height:.75rem; border-radius:3px; background:var(--pr); flex:none}
+.sw.op{background:var(--op)}
+.meta{color:var(--muted); font-size:.875rem; margin:.1rem 0 .7rem}
+.chips{display:flex; flex-wrap:wrap; gap:.4rem; list-style:none; margin:0; padding:0}
+.chips button{font:inherit; font-size:.9375rem; line-height:1.3; border:0; background:var(--pr-soft); color:var(--fg); padding:.25rem .65rem; border-radius:999px; cursor:pointer}
+.card.op .chips button{background:var(--op-soft)}
+.chips button:hover{text-decoration:underline}
+.soon{margin:.8rem 0 0; font-size:.875rem; color:var(--muted)}
+
+/* notifications */
+.notify{margin-top:1.25rem; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:1rem 1.1rem 1.1rem; display:grid; gap:.9rem}
+.notify-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:.75rem 1rem}
+.notify-head > div{min-width:0; flex:1 1 16rem}
+.notify h2{font-family:var(--font-display); font-size:1.3rem; line-height:1.2; margin:0}
+.notify .sub{margin:.2rem 0 0; color:var(--muted); font-size:.9375rem; max-width:62ch}
+.btn{font:inherit; font-size:.9375rem; font-weight:700; padding:.5rem 1.05rem; border-radius:999px; border:1px solid var(--accent); background:var(--accent); color:var(--bg); cursor:pointer}
+.btn.ghost{background:transparent; color:var(--accent)}
+.btn:disabled{opacity:.55; cursor:default}
+.nopts{display:flex; flex-wrap:wrap; gap:.9rem 2.25rem}
+.ngroup{display:flex; flex-wrap:wrap; gap:.35rem .9rem; align-items:center}
+.nlabel{flex-basis:100%; font-size:.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em}
+.ngroup label:not(.nlabel){display:inline-flex; align-items:center; gap:.35rem; font-size:.9375rem; cursor:pointer}
+.ngroup input[type="checkbox"]{width:1.05rem; height:1.05rem; margin:0; accent-color:var(--accent)}
+.ngroup select{font:inherit; font-size:1rem; padding:.3rem .5rem; border:1px solid var(--line-strong); border-radius:8px; background:var(--surface); color:var(--fg)}
+.nrow{display:flex; flex-wrap:wrap; gap:.4rem 1rem; align-items:center}
+.nmsg{margin:0; font-size:.9375rem; max-width:62ch}
+.nmsg:empty{display:none}
+.nmsg.err{color:var(--pr)}
+
+/* climate */
+.climate{margin-top:1.75rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap:1rem 2rem}
+.clim{border-top:3px solid var(--pr); padding-top:.6rem; min-width:0}
+.clim.op{border-color:var(--op)}
+.clim h3{margin:0; font-size:1rem; display:flex; justify-content:space-between; gap:.5rem; flex-wrap:wrap}
+.alt{font-variant-numeric:tabular-nums; color:var(--muted); font-weight:500}
+.clim p{margin:.35rem 0 0; color:var(--muted); font-size:.9375rem; max-width:62ch}
+
+/* controls */
+.controls{margin-top:2.5rem; display:flex; flex-wrap:wrap; gap:.75rem 1.25rem; align-items:center}
+.seg{display:inline-flex; flex-wrap:wrap; border:1px solid var(--line-strong); border-radius:8px; overflow:hidden; background:var(--surface)}
+.seg button{font:inherit; font-size:.9375rem; padding:.4rem .8rem; border:0; background:transparent; color:var(--fg); cursor:pointer}
+.seg button + button{border-left:1px solid var(--line-strong)}
+.seg button[aria-pressed="true"]{background:var(--fg); color:var(--bg)}
+.search input{width:min(100%, 15rem)}
+.legend{display:flex; flex-wrap:wrap; gap:.5rem 1.25rem; font-size:.875rem; color:var(--muted); margin-top:1rem; align-items:center}
+.legend span{display:inline-flex; align-items:center; gap:.4rem}
+.kb{display:inline-block; width:1.6rem; height:.55rem; border-radius:999px; background:var(--pr)}
+.kb.op{background:var(--op)}
+.kn{display:inline-block; width:2px; height:1rem; background:var(--mark); border-radius:1px}
+
+/* chart */
+.chart{margin-top:.75rem}
+.mhead{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:var(--bg); display:grid; grid-template-columns:var(--name-col) 1fr; gap:.75rem; padding-block:.6rem .5rem; border-bottom:1px solid var(--line-strong)}
+.mhead .lbl{font-size:.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em}
+.mlabels{position:relative; display:grid; grid-template-columns:repeat(12, 1fr); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); text-align:center}
+.mlabels::after{content:""; position:absolute; bottom:-.85rem; left:var(--nowx); width:9px; height:9px; margin-left:-4.5px; background:var(--mark); border-radius:50%}
+.mlabels .s{display:none}
+.group h2{font-family:var(--font-display); font-size:1.3rem; margin:1.6rem 0 .2rem; display:flex; gap:.6rem; align-items:baseline; flex-wrap:wrap}
+.group h2 small{font-family:var(--font-body); font-size:.875rem; color:var(--muted); font-weight:400}
+details.row{border-bottom:1px solid var(--line)}
+details.row > summary{display:grid; grid-template-columns:var(--name-col) 1fr; gap:.75rem; align-items:center; padding-block:.5rem; cursor:pointer; list-style:none}
+details.row > summary::-webkit-details-marker{display:none}
+.name{min-width:0; display:flex; flex-direction:column; line-height:1.2}
+.name b{font-weight:500; font-size:1rem}
+.name em{font-size:.8125rem; color:var(--muted)}
+summary:hover .name b, details[open] .name b{color:var(--accent)}
+.dots{display:inline-flex; gap:3px; margin-left:.35rem; vertical-align:middle}
+.dot{display:none; width:7px; height:7px; border-radius:50%; background:var(--pr)}
+.dot.op{background:var(--op)}
+.row.in-pr .dot.pr, .row.in-op .dot.op{display:inline-block}
+.chart.z-pr .dot.op, .chart.z-op .dot.pr{display:none !important}
+.track{position:relative; height:1.75rem; background-image:linear-gradient(to right, var(--line) 1px, transparent 1px); background-size:calc(100% / 12) 100%; border-right:1px solid var(--line)}
+.lane{position:absolute; left:0; right:0; height:.55rem}
+.lane.pr{top:.3rem}
+.lane.op{bottom:.3rem}
+.chart.z-pr .lane.op, .chart.z-op .lane.pr{display:none}
+.chart.z-pr .lane.pr, .chart.z-op .lane.op{top:50%; bottom:auto; height:.75rem; transform:translateY(-50%)}
+.bar{position:absolute; top:0; bottom:0; border-radius:999px; background:var(--pr); min-width:4px}
+.lane.op .bar{background:var(--op)}
+.track::after{content:""; position:absolute; top:-.3rem; bottom:-.3rem; left:var(--nowx); width:2px; margin-left:-1px; background:var(--mark); border-radius:1px}
+.info{display:grid; grid-template-columns:var(--name-col) 1fr; gap:.75rem; padding:0 0 1rem}
+.info > div{min-width:0}
+.info .type{margin:0 0 .4rem; color:var(--muted); font-size:.875rem}
+.info dl{display:grid; grid-template-columns:auto 1fr; gap:.2rem .9rem; margin:0 0 .5rem}
+.info dt{font-weight:700; display:flex; align-items:center; gap:.4rem}
+.info dd{margin:0; font-variant-numeric:tabular-nums}
+.info p{margin:.3rem 0 0; max-width:62ch}
+.info .note{color:var(--muted)}
+.empty{padding:2rem 0; color:var(--muted)}
+
+/* notes */
+.notes{margin-top:3rem; border-top:1px solid var(--line-strong); padding-top:1.1rem; font-size:.9375rem; color:var(--muted); display:grid; gap:1.25rem; grid-template-columns:repeat(auto-fit, minmax(min(100%, 20rem), 1fr))}
+.notes h2{font-family:var(--font-display); font-size:1.1rem; color:var(--fg); margin:0 0 .3rem}
+.notes p, .notes ul{margin:0; max-width:62ch}
+.notes ul{padding-left:1.1rem}
+.notes li + li{margin-top:.3rem}
+.ver{grid-column:1 / -1; font-size:.8125rem}
+
+@media (max-width:640px){
+  :root{--name-col:minmax(6.75rem, 8.5rem)}
+  .mlabels .l{display:none}
+  .mlabels .s{display:inline}
+  .name em{display:none}
+  .mhead .lbl{visibility:hidden}
+}
+@media (max-width:560px){
+  .info{grid-template-columns:1fr}
+  .info .spacer{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="appbar">
+    <p class="status" id="status" role="status">Po ngarkohet…</p>
+    <button type="button" class="install" id="installBtn" hidden>Instalo aplikacionin</button>
+    <p class="ioshint" id="iosHint" hidden>Në iPhone: shtypni Ndaj (katrori me shigjetë), pastaj “Shto në ekranin bazë”.</p>
+  </div>
+
+  <header>
+    <p class="eyebrow">Prishtinë · Opojë / Dragash</p>
+    <h1>Kalendari i vjeljes</h1>
+    <p class="lead">Kur piqen frutat, perimet dhe frutat e egra në Prishtinë dhe në Opojë. Opoja, në 1000–1500 m lartësi, vjen zakonisht 2–3 javë më vonë dhe e ka sezonin më të shkurtër. Shtypni një kulturë për datat e sakta dhe këshillat.</p>
+  </header>
+
+  <section class="now" aria-labelledby="nowTitle">
+    <div class="now-head">
+      <h2 id="nowTitle">Çfarë vilet sot</h2>
+      <div class="datebox">
+        <label for="data">Data</label>
+        <input type="date" id="data">
+        <button type="button" class="btn-link" id="sotBtn" hidden>Kthehu te sot</button>
+      </div>
+    </div>
+    <div class="now-grid">
+      <div class="card pr" id="cardPr"></div>
+      <div class="card op" id="cardOp"></div>
+    </div>
+  </section>
+
+  <section class="notify" aria-labelledby="nTitle">
+    <div class="notify-head">
+      <div>
+        <h2 id="nTitle">Njoftime në telefon</h2>
+        <p class="sub">Në orën 8:00 të mëngjesit, vetëm në ditët kur fillon vjelja e diçkaje që keni zgjedhur.</p>
+      </div>
+      <button type="button" class="btn" id="nBtn">Aktivizo njoftimet</button>
+    </div>
+    <div class="nopts">
+      <div class="ngroup" role="group" aria-labelledby="nZl">
+        <span class="nlabel" id="nZl">Zonat</span>
+        <label><input type="checkbox" id="nzpr" data-z="pr" checked> Prishtinë</label>
+        <label><input type="checkbox" id="nzop" data-z="op" checked> Opojë</label>
+      </div>
+      <div class="ngroup" role="group" aria-labelledby="nCl">
+        <span class="nlabel" id="nCl">Çfarë</span>
+        <label><input type="checkbox" id="ncf" data-c="f" checked> Fruta</label>
+        <label><input type="checkbox" id="ncp" data-c="p" checked> Perime</label>
+        <label><input type="checkbox" id="nce" data-c="e" checked> Të egra</label>
+      </div>
+      <div class="ngroup">
+        <label class="nlabel" for="nLead">Kur</label>
+        <select id="nLead">
+          <option value="0">Ditën që fillon</option>
+          <option value="3">3 ditë para</option>
+          <option value="7">1 javë para</option>
+        </select>
+      </div>
+    </div>
+    <div class="nrow">
+      <p class="nmsg" id="nMsg" role="status"></p>
+      <button type="button" class="btn-link" id="nTest" hidden>Dërgo një njoftim provë</button>
+    </div>
+  </section>
+
+  <section class="climate" aria-label="Klima e dy zonave">
+    <div class="clim">
+      <h3>Prishtinë <span class="alt">≈ 580–650 m</span></h3>
+      <p>Klimë kontinentale e butë, me verë të ngrohtë: korriku dhe gushti kanë rreth 20 °C mesatare ditore. Ngrica e fundit bie zakonisht në prill, e para në gjysmën e dytë të tetorit.</p>
+    </div>
+    <div class="clim op">
+      <h3>Opojë / Dragash <span class="alt">≈ 1000–1500 m</span></h3>
+      <p>Klimë nën-alpine. Dragashi ka mesatare vjetore 8,6 °C dhe verë rreth 18 °C. Ngricat e vona dalin edhe në maj, ndërsa vjeshta i sjell nga fundi i shtatorit. Sa më lart fshati, aq më vonë piqet çdo gjë.</p>
+    </div>
+  </section>
+
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Zona">
+      <button type="button" data-zone="both" aria-pressed="true">Të dyja</button>
+      <button type="button" data-zone="pr" aria-pressed="false">Prishtinë</button>
+      <button type="button" data-zone="op" aria-pressed="false">Opojë</button>
+    </div>
+    <div class="seg" role="group" aria-label="Lloji">
+      <button type="button" data-cat="all" aria-pressed="true">Të gjitha</button>
+      <button type="button" data-cat="f" aria-pressed="false">Fruta</button>
+      <button type="button" data-cat="p" aria-pressed="false">Perime</button>
+      <button type="button" data-cat="e" aria-pressed="false">Të egra</button>
+    </div>
+    <div class="search">
+      <label class="sr" for="kerko">Kërko kulturën</label>
+      <input type="search" id="kerko" placeholder="Kërko: mollë, patate…">
+    </div>
+  </div>
+  <div class="legend" aria-hidden="true">
+    <span><i class="kb"></i>Prishtinë</span>
+    <span><i class="kb op"></i>Opojë</span>
+    <span><i class="kn"></i>Data e zgjedhur</span>
+  </div>
+
+  <div class="chart z-both" id="chart">
+    <div class="mhead" aria-hidden="true">
+      <span class="lbl">Kultura</span>
+      <div class="mlabels" id="mlabels"></div>
+    </div>
+    <div id="groups"></div>
+    <p class="empty" id="empty" hidden>Asnjë kulturë nuk përputhet me kërkimin. Provoni një fjalë tjetër ose zgjidhni “Të gjitha”.</p>
+  </div>
+
+  <footer class="notes">
+    <div>
+      <h2>Si ta lexoni</h2>
+      <p>Datat janë periudha mesatare. Një vit më i ngrohtë ose më i ftohtë i lëviz 1–2 javë, po ashtu edhe varieteti, ana e arës (jug apo veri) dhe lartësia e fshatit. Në Opojë, perimet që nuk e durojnë ngricën (domate, speca, trangull, kungulleshkë) mbillen jashtë vetëm pas 20 majit, ose rriten në serrë.</p>
+    </div>
+    <div>
+      <h2>Burimet</h2>
+      <ul>
+        <li><a href="https://dragash.rks-gov.net/wp-content/uploads/2017/12/AZHQ-p%C3%ABr-Dragash-V%C3%ABllimi-2-Baza.pdf" target="_blank" rel="noopener">Atlasi i Zhvillimit të Qëndrueshëm për Dragashin, Vëllimi II</a> (UNDP, 2013): lartësitë, klima, bujqësia në Opojë.</li>
+        <li><a href="https://fbv.uni-pr.edu/desk/inc/media/9BA56814-51CA-4C3A-83B0-2AF79673F795.pdf" target="_blank" rel="noopener">Gashi, V. (2022), boronica natyrore në zonën e Dragashit</a>, UP – Fakulteti i Bujqësisë: datat e pjekjes së boronicës.</li>
+        <li><a href="https://www.climate-zone.com/climate/serbia-montenegro/celsius/pristina.htm" target="_blank" rel="noopener">Climate-zone: Prishtina</a>: temperaturat mujore.</li>
+        <li>Datat e tjera janë periudhat e zakonshme të kopshtarisë për këto lartësi.</li>
+      </ul>
+    </div>
+    <p class="ver" id="ver"></p>
+  </footer>
+</div>
+
+<script>
+(async function(){
+  const APP_VERSION='1.1 · 24 tetor 2026';
+  const MON=['janar','shkurt','mars','prill','maj','qershor','korrik','gusht','shtator','tetor','nëntor','dhjetor'];
+  const ML=['Jan','Shk','Mar','Pri','Maj','Qer','Kor','Gus','Sht','Tet','Nën','Dhj'];
+  const MS=['J','Sh','M','P','M','Q','K','G','Sh','T','N','Dh'];
+  const DIM=[31,28,31,30,31,30,31,31,30,31,30,31];
+  const CUM=[0]; DIM.forEach((d,i)=>CUM.push(CUM[i]+d));
+  const P=s=>{const [m,d]=s.split('-').map(Number); return {m,d};};
+  const R=s=>s?s.split(',').map(x=>{const [a,b]=x.split('/'); return {a:P(a), b:P(b)};}):null;
+  const xs=p=>(p.m-1+(p.d-1)/DIM[p.m-1])/12*100;
+  const xe=p=>(p.m-1+p.d/DIM[p.m-1])/12*100;
+  const K=p=>p.m*100+p.d;
+  const DOY=p=>CUM[p.m-1]+p.d;
+  const F=p=>p.d+' '+MON[p.m-1];
+  const FR=r=>r.map(x=>F(x.a)+' – '+F(x.b)).join(' dhe ');
+  const lc=s=>s.charAt(0).toLowerCase()+s.slice(1);
+  const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+
+  let DATA;
+  try {
+    const res=await fetch('crops.json');
+    if(!res.ok) throw new Error(res.status);
+    DATA=await res.json();
+  } catch(e) {
+    document.getElementById('groups').innerHTML='<p class="empty">Të dhënat nuk u ngarkuan. Lidhuni me internet dhe hapeni sërish aplikacionin.</p>';
+    document.getElementById('status').textContent='Të dhënat nuk u ngarkuan';
+    return;
+  }
+  const GROUPS=[['f','Fruta të kultivuara'],['p','Perime'],['e','Fruta dhe bimë të egra']];
+  const crops=DATA.map(c=>Object.assign({},c,{pr:R(c.pr),op:R(c.op)}));
+  const first=c=>Math.min(...[].concat(c.pr||[],c.op||[]).map(x=>DOY(x.a)));
+
+  // month labels
+  document.getElementById('mlabels').innerHTML=ML.map((m,i)=>`<span><span class="l">${m}</span><span class="s">${MS[i]}</span></span>`).join('');
+
+  // rows
+  const lane=(z,r)=>`<span class="lane ${z}">${r?r.map(x=>`<span class="bar" style="left:${xs(x.a).toFixed(2)}%;width:${(xe(x.b)-xs(x.a)).toFixed(2)}%"></span>`).join(''):''}</span>`;
+  const none=c=>c.c==='e'?'Nuk rritet këtu':'Zakonisht nuk kultivohet';
+  const groupsEl=document.getElementById('groups');
+  const rows={}; const groupEls={};
+  GROUPS.forEach(([g,label])=>{
+    const list=crops.filter(c=>c.c===g).sort((a,b)=>first(a)-first(b));
+    const sec=document.createElement('section'); sec.className='group';
+    sec.innerHTML=`<h2>${label} <small>${list.length} kultura</small></h2>`;
+    list.forEach(c=>{
+      const det=document.createElement('details'); det.className='row'; det.id='k-'+c.id;
+      const srt=`Prishtinë: ${c.pr?FR(c.pr):none(c)}. Opojë: ${c.op?FR(c.op):none(c)}.`;
+      det.innerHTML=`<summary><span class="name"><b>${c.n}<span class="dots" aria-hidden="true"><span class="dot pr"></span><span class="dot op"></span></span></b><em>${c.s}</em></span><span class="track" aria-hidden="true">${lane('pr',c.pr)}${lane('op',c.op)}</span><span class="sr">${srt}</span></summary>`+
+        `<div class="info"><span class="spacer"></span><div><p class="type">${c.t} · <em>${c.s}</em></p><dl><dt><span class="sw"></span>Prishtinë</dt><dd>${c.pr?FR(c.pr):none(c)}</dd><dt><span class="sw op"></span>Opojë</dt><dd>${c.op?FR(c.op):none(c)}</dd></dl><p>${c.d}</p>${c.o?`<p class="note">${c.o}</p>`:''}</div></div>`;
+      sec.appendChild(det); rows[c.id]=det;
+    });
+    groupsEl.appendChild(sec); groupEls[g]=sec;
+  });
+
+  // filters (remembered on this device)
+  const store={get(k){try{return localStorage.getItem(k);}catch(e){return null;}}, set(k,v){try{localStorage.setItem(k,v);}catch(e){}}};
+  const state={zone:store.get('vjelja-zone')||'both', cat:store.get('vjelja-cat')||'all', q:''};
+  if(!['both','pr','op'].includes(state.zone)) state.zone='both';
+  if(!['all','f','p','e'].includes(state.cat)) state.cat='all';
+  const chart=document.getElementById('chart');
+  const kerko=document.getElementById('kerko');
+  function apply(){
+    chart.className='chart z-'+state.zone;
+    const q=norm(state.q.trim());
+    let any=false; const counts={f:0,p:0,e:0};
+    crops.forEach(c=>{
+      const ok=(state.cat==='all'||c.c===state.cat)&&(state.zone==='both'||c[state.zone])&&(!q||norm(c.n+' '+c.s).includes(q));
+      rows[c.id].hidden=!ok; if(ok){any=true; counts[c.c]++;}
+    });
+    GROUPS.forEach(([g])=>{groupEls[g].hidden=!counts[g]; groupEls[g].querySelector('small').textContent=counts[g]===1?'1 kulturë':counts[g]+' kultura';});
+    document.getElementById('empty').hidden=any;
+    document.querySelectorAll('[data-zone]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.zone===state.zone));
+    document.querySelectorAll('[data-cat]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.cat===state.cat));
+    store.set('vjelja-zone',state.zone); store.set('vjelja-cat',state.cat);
+  }
+  document.querySelectorAll('[data-zone]').forEach(b=>b.addEventListener('click',()=>{state.zone=b.dataset.zone; apply();}));
+  document.querySelectorAll('[data-cat]').forEach(b=>b.addEventListener('click',()=>{state.cat=b.dataset.cat; apply();}));
+  kerko.addEventListener('input',()=>{state.q=kerko.value; apply();});
+
+  // date + "now" panel — follows the real date unless a date is picked
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const pad=n=>String(n).padStart(2,'0');
+  const todayISO=()=>{const t=new Date(); return t.getFullYear()+'-'+pad(t.getMonth()+1)+'-'+pad(t.getDate());};
+  const dateIn=document.getElementById('data');
+  const sotBtn=document.getElementById('sotBtn');
+  let picked=false;
+
+  function go(id){
+    const row=rows[id];
+    if(row.hidden){state.zone='both'; state.cat='all'; state.q=''; kerko.value=''; apply();}
+    row.open=true;
+    row.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'});
+    row.querySelector('summary').focus({preventScroll:true});
+  }
+  function card(el,z,label,p){
+    const k=K(p), t=DOY(p);
+    const list=crops.filter(c=>c[z]&&c[z].some(x=>K(x.a)<=k&&k<=K(x.b))).sort((a,b)=>GROUPS.findIndex(g=>g[0]===a.c)-GROUPS.findIndex(g=>g[0]===b.c));
+    const soon=[]; let next=null, nd=999;
+    crops.forEach(c=>{
+      if(!c[z]||list.includes(c)) return;
+      let best=999, bx=null;
+      c[z].forEach(x=>{const dd=(DOY(x.a)-t+365)%365; if(dd>0&&dd<best){best=dd; bx=x;}});
+      if(!bx) return;
+      if(best<=30) soon.push({c,x:bx,dd:best});
+      if(best<nd){nd=best; next={c,x:bx};}
+    });
+    soon.sort((a,b)=>a.dd-b.dd);
+    const n=list.length;
+    const count=n===0?'Asgjë për t’u vjelë në këtë kohë.':(n===1?'1 kulturë në sezon':n+' kultura në sezon');
+    let s='';
+    if(soon.length) s='Fillojnë brenda 30 ditëve: '+soon.map(o=>lc(o.c.n)+' ('+F(o.x.a)+')').join(', ')+'.';
+    else if(next) s='E para që vjen pas kësaj: '+lc(next.c.n)+', nga '+F(next.x.a)+'.';
+    el.innerHTML=`<h3><span class="sw ${z==='op'?'op':''}"></span>${label}</h3><p class="meta">${count}</p>`+
+      (n?`<ul class="chips">${list.map(c=>`<li><button type="button" data-go="${c.id}">${c.n}</button></li>`).join('')}</ul>`:'')+
+      (s?`<p class="soon">${s}</p>`:'');
+    el.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+  }
+  function setDate(iso){
+    if(!/^\d{4}-\d{2}-\d{2}$/.test(iso)) iso=todayISO();
+    const [,m,d]=iso.split('-').map(Number);
+    const p={m, d:Math.min(d, DIM[m-1])};
+    document.documentElement.style.setProperty('--nowx', ((m-1+(p.d-0.5)/DIM[m-1])/12*100).toFixed(2)+'%');
+    const isToday=iso===todayISO();
+    document.getElementById('nowTitle').textContent=isToday?'Çfarë vilet sot, '+F(p):'Çfarë vilet më '+F(p);
+    sotBtn.hidden=isToday;
+    const k=K(p);
+    crops.forEach(c=>{
+      const r=rows[c.id];
+      r.classList.toggle('in-pr', !!(c.pr&&c.pr.some(x=>K(x.a)<=k&&k<=K(x.b))));
+      r.classList.toggle('in-op', !!(c.op&&c.op.some(x=>K(x.a)<=k&&k<=K(x.b))));
+    });
+    card(document.getElementById('cardPr'),'pr','Prishtinë',p);
+    card(document.getElementById('cardOp'),'op','Opojë / Dragash',p);
+  }
+  function followToday(){
+    if(picked) return;
+    const t=todayISO();
+    if(dateIn.value!==t){ dateIn.value=t; setDate(t); }
+  }
+  dateIn.addEventListener('change',()=>{ picked=dateIn.value!==todayISO(); setDate(dateIn.value); });
+  sotBtn.addEventListener('click',()=>{ picked=false; dateIn.value=todayISO(); setDate(dateIn.value); });
+  document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible') followToday(); });
+  window.addEventListener('focus',followToday);
+  setInterval(followToday,60000);
+
+  apply();
+  dateIn.value=todayISO();
+  setDate(dateIn.value);
+
+  // ---- app: status, offline, updates, install ----
+  document.getElementById('ver').textContent='Versioni '+APP_VERSION;
+  const statusEl=document.getElementById('status');
+  let ready=false;
+  function setStatus(){
+    if(!navigator.onLine){ statusEl.textContent='Pa internet · po përdoret kopja e ruajtur'; statusEl.classList.add('off'); }
+    else { statusEl.textContent=ready?'I përditësuar · punon edhe pa internet':'Në linjë'; statusEl.classList.remove('off'); }
+  }
+  window.addEventListener('online',setStatus);
+  window.addEventListener('offline',setStatus);
+  setStatus();
+
+  if('serviceWorker' in navigator){
+    const hadController=!!navigator.serviceWorker.controller;
+    let reloading=false;
+    navigator.serviceWorker.addEventListener('controllerchange',()=>{
+      if(!hadController||reloading) return;
+      reloading=true; location.reload();
+    });
+    const whenLoaded=fn=>{ if(document.readyState==='complete') fn(); else window.addEventListener('load',fn); };
+    whenLoaded(()=>{
+      navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).then(reg=>{
+        const check=()=>{ if(navigator.onLine) reg.update().catch(()=>{}); };
+        document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible') check(); });
+        window.addEventListener('online',check);
+        navigator.serviceWorker.ready.then(()=>{ ready=true; setStatus(); });
+      }).catch(()=>{ statusEl.textContent='Kjo kopje nuk mund të ruhet për përdorim pa internet'; });
+    });
+  } else {
+    statusEl.textContent='Ky shfletues nuk e mbështet përdorimin pa internet';
+  }
+
+  const instBtn=document.getElementById('installBtn');
+  let deferred=null;
+  window.addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); deferred=e; instBtn.hidden=false; });
+  instBtn.addEventListener('click',async()=>{
+    if(!deferred) return;
+    deferred.prompt();
+    try{ await deferred.userChoice; }catch(e){}
+    deferred=null; instBtn.hidden=true;
+  });
+  window.addEventListener('appinstalled',()=>{ instBtn.hidden=true; });
+  const standalone=(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches)||window.navigator.standalone===true;
+  const ios=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+  if(ios&&!standalone) document.getElementById('iosHint').hidden=false;
+
+  // open a crop from a link or a notification (#k-<id>)
+  function openHash(){
+    const h=location.hash;
+    if(h.indexOf('#k-')===0 && rows[h.slice(3)]) go(h.slice(3));
+  }
+  window.addEventListener('hashchange',openHash);
+  openHash();
+
+  // ---- notifications ----
+  const ZN={pr:'Prishtinë', op:'Opojë'};
+  const $=id=>document.getElementById(id);
+  const nBtn=$('nBtn'), nMsg=$('nMsg'), nTest=$('nTest'), nLead=$('nLead');
+  const zBoxes=[...document.querySelectorAll('[data-z]')], cBoxes=[...document.querySelectorAll('[data-c]')];
+  const NKEY='vjelja-notify';
+  const pushOK=('serviceWorker' in navigator)&&('PushManager' in window)&&('Notification' in window);
+  let nSub=null, pending=false, saveTimer=null;
+
+  try{
+    const saved=JSON.parse(store.get(NKEY)||'null');
+    if(saved){
+      zBoxes.forEach(b=>{ b.checked=saved.zones.includes(b.dataset.z); });
+      cBoxes.forEach(b=>{ b.checked=saved.cats.includes(b.dataset.c); });
+      nLead.value=String(saved.lead||0);
+    }
+  }catch(e){}
+  const readPrefs=()=>({ zones:zBoxes.filter(b=>b.checked).map(b=>b.dataset.z), cats:cBoxes.filter(b=>b.checked).map(b=>b.dataset.c), lead:Number(nLead.value)||0 });
+  const say=(t,err)=>{ nMsg.textContent=t; nMsg.classList.toggle('err',!!err); };
+  const b64uToBytes=s=>{ const b=atob(s.replace(/-/g,'+').replace(/_/g,'/')+'==='.slice((s.length+3)%4)); return Uint8Array.from(b,c=>c.charCodeAt(0)); };
+  const sameKey=(a,b)=>{ if(!a) return false; a=new Uint8Array(a); return a.length===b.length&&a.every((x,i)=>x===b[i]); };
+  async function api(path, body){
+    const r=await fetch(path,{ method:body?'POST':'GET', headers:body?{'content-type':'application/json'}:{}, body:body?JSON.stringify(body):undefined, cache:'no-store' });
+    let j={}; try{ j=await r.json(); }catch(e){}
+    if(!r.ok) throw new Error(j.error||('Gabim '+r.status));
+    return j;
+  }
+  function nextNotice(p){
+    const now=new Date();
+    for(let i=0;i<367;i++){
+      if(i===0&&now.getHours()>=8) continue;
+      const day=new Date(now.getFullYear(), now.getMonth(), now.getDate()+i);
+      const target=new Date(day.getFullYear(), day.getMonth(), day.getDate()+p.lead);
+      const m=target.getMonth()+1, d=target.getDate();
+      for(const z of p.zones) for(const c of crops){
+        if(!p.cats.includes(c.c)||!c[z]) continue;
+        if(c[z].some(x=>x.a.m===m&&x.a.d===d)) return { day:{m:day.getMonth()+1, d:day.getDate()}, c, z };
+      }
+    }
+    return null;
+  }
+  function describe(){
+    const nx=nextNotice(readPrefs());
+    return nx?`Njoftimet janë aktive. I radhës vjen më ${F(nx.day)}: ${lc(nx.c.n)} (${ZN[nx.z]}).`:'Njoftimet janë aktive.';
+  }
+  function renderN(){
+    if(!pushOK){
+      nBtn.disabled=true;
+      say(ios&&!standalone?'Në iPhone, njoftimet punojnë vetëm pasi ta shtoni aplikacionin në ekranin bazë dhe ta hapni prej andej.':'Ky shfletues nuk i mbështet njoftimet. Provoni Chrome në telefon.');
+      return;
+    }
+    nBtn.textContent=nSub?'Çaktivizo njoftimet':'Aktivizo njoftimet';
+    nBtn.classList.toggle('ghost',!!nSub);
+    nTest.hidden=!nSub;
+    if(Notification.permission==='denied') say('Njoftimet janë bllokuar për këtë faqe. Lejojini te cilësimet e shfletuesit (ikona pranë adresës), pastaj provoni sërish.',true);
+    else if(nSub) say(describe());
+    else say('');
+  }
+  async function enable(){
+    const p=readPrefs();
+    if(!p.zones.length||!p.cats.length){ say('Zgjidhni të paktën një zonë dhe një lloj.',true); return; }
+    if(!navigator.onLine){ say('Duhet internet për t’i aktivizuar njoftimet.',true); return; }
+    nBtn.disabled=true; say('Po aktivizohen…');
+    try{
+      const perm=await Notification.requestPermission();
+      if(perm!=='granted'){ say(perm==='denied'?'Njoftimet janë bllokuar për këtë faqe. Lejojini te cilësimet e shfletuesit, pastaj provoni sërish.':'Leja për njoftime nuk u dha.',true); return; }
+      const reg=await navigator.serviceWorker.ready;
+      const { key }=await api('/api/vapid');
+      const appKey=b64uToBytes(key);
+      let sub=await reg.pushManager.getSubscription();
+      if(sub&&!sameKey(sub.options&&sub.options.applicationServerKey, appKey)){ await sub.unsubscribe(); sub=null; }
+      if(!sub) sub=await reg.pushManager.subscribe({ userVisibleOnly:true, applicationServerKey:appKey });
+      await api('/api/subscribe',{ sub:sub.toJSON(), ...p });
+      nSub=sub;
+      store.set(NKEY, JSON.stringify(p)); store.set('vjelja-sync', todayISO());
+      renderN();
+    }catch(e){
+      const pushDown=e&&(e.name==='AbortError'||/push service/i.test(e.message||''));
+      say(pushDown?'Shfletuesi nuk arriti të lidhet me shërbimin e njoftimeve. Kontrolloni internetin dhe provoni sërish.':'Njoftimet nuk u aktivizuan: '+(e.message||e),true);
+    }finally{ nBtn.disabled=false; }
+  }
+  async function disable(){
+    nBtn.disabled=true;
+    try{
+      const ep=nSub.endpoint;
+      await nSub.unsubscribe();
+      nSub=null;
+      api('/api/unsubscribe',{ endpoint:ep }).catch(()=>{});
+      renderN(); say('Njoftimet u çaktivizuan.');
+    }catch(e){ say('Njoftimet nuk u çaktivizuan: '+(e.message||e),true); }
+    finally{ nBtn.disabled=false; }
+  }
+  async function savePrefs(){
+    const p=readPrefs();
+    if(!p.zones.length||!p.cats.length){ say('Zgjidhni të paktën një zonë dhe një lloj.',true); return; }
+    store.set(NKEY, JSON.stringify(p));
+    if(!nSub) return;
+    if(!navigator.onLine){ pending=true; say('Pa internet: ndryshimi ruhet sapo të lidheni.'); return; }
+    try{ await api('/api/subscribe',{ sub:nSub.toJSON(), ...p }); pending=false; store.set('vjelja-sync', todayISO()); say('U ruajt. '+describe()); }
+    catch(e){ say('Ndryshimi nuk u ruajt: '+(e.message||e),true); }
+  }
+  nBtn.addEventListener('click',()=>{ nSub?disable():enable(); });
+  [...zBoxes,...cBoxes,nLead].forEach(el=>el.addEventListener('change',()=>{ clearTimeout(saveTimer); saveTimer=setTimeout(savePrefs,500); }));
+  window.addEventListener('online',()=>{ if(pending) savePrefs(); });
+  nTest.addEventListener('click',async()=>{
+    if(!nSub) return;
+    nTest.disabled=true;
+    try{ await api('/api/test',{ endpoint:nSub.endpoint }); say('Njoftimi provë u dërgua. Duhet të vijë për pak sekonda.'); }
+    catch(e){ say('Njoftimi provë nuk u dërgua: '+(e.message||e),true); }
+    finally{ nTest.disabled=false; }
+  });
+  renderN();
+  if(pushOK){
+    navigator.serviceWorker.ready.then(reg=>reg.pushManager.getSubscription()).then(sub=>{
+      nSub=sub; renderN();
+      if(sub&&navigator.onLine&&store.get('vjelja-sync')!==todayISO()){
+        api('/api/subscribe',{ sub:sub.toJSON(), ...readPrefs() }).then(()=>store.set('vjelja-sync', todayISO())).catch(()=>{});
+      }
+    }).catch(()=>{});
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  // Kalendari i Vjeljes — PWA + njoftime
+  "name": "kalendariivjeljes",
+  "main": "src/worker.js",
+  "compatibility_date": "2025-05-19",
+  "assets": { "directory": "./public", "binding": "ASSETS" },
+  "kv_namespaces": [{ "binding": "SUBS", "id": "b749ae4318624e9483e52e5320a60a0d" }],
+  "triggers": { "crons": ["0 6 * * *", "0 7 * * *"] },
+  "vars": {
+    "VAPID_PUBLIC_KEY": "BI--s3-e0zE88dIfRPseMPljdeVBS-GZoCquf7jfccEuvMJ3_8w2eui810-0CkYIYlHUH5wcVY8a3ErfuB3Oc1M",
+    "VAPID_SUBJECT": "https://kalendariivjeljes.muamer-arifi.workers.dev"
+  },
+  "observability": { "enabled": true }
+  // Sekreti VAPID_PRIVATE_KEY vendoset te Cloudflare (Settings → Variables and Secrets), jo këtu.
+}
