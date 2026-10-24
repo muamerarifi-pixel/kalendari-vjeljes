@@ -2,7 +2,7 @@
 // Rrjeti i pari: sa herë që ka internet merret versioni më i ri;
 // pa internet (ose kur rrjeti vonon më shumë se 4 sekonda) përdoret kopja e ruajtur.
 // Kur ndryshon aplikacionin, ndrysho VERSION këtu: telefonat e marrin vetë ndryshimin.
-const VERSION = '1.1-2026-10-24';
+const VERSION = '1.2-2026-10-24';
 const CACHE = 'vjelja-' + VERSION;
 const TIMEOUT_MS = 4000;
 
